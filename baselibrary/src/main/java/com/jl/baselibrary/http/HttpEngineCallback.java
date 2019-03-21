@@ -2,7 +2,7 @@ package com.jl.baselibrary.http;
 
 public interface HttpEngineCallback {
 
-    void onFailure(Exception e);
+    void onFailure(Throwable e);
 
     void onSuccess(String response);
 

@@ -10,6 +10,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baselibrary.sample.http.DownloadCallback;
 import com.baselibrary.sample.http.OkHttpEngine;
 import com.jl.baselibrary.Core;
 import com.jl.baselibrary.http.HttpEngineCallback;
@@ -39,10 +40,10 @@ public class MainActivity extends FragmentActivity {
     @OnClick({R.id.tvText})
     private void onClick(View view) {
 
-        HttpManager.with(this).exchangeEngine(new OkHttpEngine()).get().url("http://www.biubiushop.com/bbg/py/version/bjf_get_version")
-                .addParam("platform", 0).addParam("version", "1.2.0").execute(new HttpEngineCallback() {
+        HttpManager.getInstance().exchangeEngine(new OkHttpEngine()).get().url("http://www.biubiushop.com/bbg/py/version/bjf_get_version")
+                .addParam("platform", 0).addParam("version", "1.2.0").tag(this).execute(new HttpEngineCallback() {
             @Override
-            public void onFailure(Exception e) {
+            public void onFailure(Throwable e) {
 
             }
 
@@ -51,5 +52,44 @@ public class MainActivity extends FragmentActivity {
 
             }
         });
+
+
+        HttpManager.getInstance().exchangeEngine(new OkHttpEngine()).upload("..", "..").execute(new DownloadCallback() {
+            @Override
+            public void onFailure(Throwable e) {
+
+            }
+
+            @Override
+            public void onSuccess(String response) {
+
+            }
+
+            @Override
+            public void onStarted() {
+
+            }
+
+            @Override
+            public void onLoading(int progress) {
+
+            }
+
+            @Override
+            public void onCancelled() {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        HttpManager.getInstance().exchangeEngine(new OkHttpEngine()).cancel(this);
     }
 }

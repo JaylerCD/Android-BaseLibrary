@@ -1,6 +1,4 @@
 package com.jl.baselibrary.http;
-
-import android.content.Context;
 import android.text.TextUtils;
 
 import java.util.HashMap;
@@ -11,8 +9,8 @@ public class HttpManager {
     // 网络访问引擎
     private HttpEngine mHttpEngine;
 
-    // 上下文
-    private Context mContext;
+    // 标识（作用:取消网络请求）
+    private Object mTag;
 
     // 接口地址
     private String mUrl;
@@ -23,8 +21,17 @@ public class HttpManager {
     // 请求方式
     private HttpMethod mHttpMethod = HttpMethod.GET;
 
+    // 请求ContentType
+    private String mContentType = "application/json";
+
     // 是否缓存
     private boolean mCache = false;
+
+    // 文件地址
+    private String mFilePath;
+
+    // 文件名字
+    private String mFileName;
 
     // 切换引擎
     public HttpManager exchangeEngine(HttpEngine httpEngine){
@@ -32,14 +39,19 @@ public class HttpManager {
         return this;
     }
 
+    public static HttpManager getInstance(){
+        return new HttpManager();
+    }
 
-    private HttpManager(Context context){
-        this.mContext = context;
+
+    private HttpManager(){
         this.mParams = new HashMap<>();
     }
 
-    public static HttpManager with(Context context){
-        return new HttpManager(context);
+
+    public HttpManager tag(Object tag){
+        this.mTag = tag;
+        return this;
     }
 
     public HttpManager url(String url){
@@ -67,6 +79,18 @@ public class HttpManager {
         return this;
     }
 
+    public HttpManager upload(String filePath, String fileName){
+        this.mFilePath = filePath;
+        this.mFileName = fileName;
+        return this;
+    }
+
+    public HttpManager contentType(String contentType){
+        this.mContentType = contentType;
+        this.mHttpMethod = HttpMethod.POST;
+        return this;
+    }
+
     public HttpManager cache(boolean cache){
         this.mCache = cache;
         return this;
@@ -87,19 +111,39 @@ public class HttpManager {
             get(mUrl, mParams, httpEngineCallback);
             return;
         }
-
         if (mHttpMethod == HttpMethod.POST) {
             post(mUrl, mParams, httpEngineCallback);
             return;
         }
+        if (!TextUtils.isEmpty(mContentType) && mContentType.toLowerCase().contains("multipart")) {
+            MultipartBody multipartBody = new MultipartBody();
+            multipartBody.setContentType(mContentType);
+            multipartBody.setParams(mParams);
+            upload(mUrl, multipartBody, mFilePath, mFileName, httpEngineCallback);
+            return;
+        }else {
+            get(mUrl, mParams, httpEngineCallback);
+        }
     }
 
     private void get(String url, Map<String, Object> params, HttpEngineCallback httpEngineCallback) {
-        mHttpEngine.get(mContext, url, params, httpEngineCallback, mCache);
+        mHttpEngine.get(url, params, mContentType, mTag, mCache , httpEngineCallback);
     }
 
     private void post(String url, Map<String, Object> params, HttpEngineCallback httpEngineCallback) {
-        mHttpEngine.post(mContext, url, params, httpEngineCallback, mCache);
+        mHttpEngine.post(url, params, mContentType, mTag, mCache , httpEngineCallback);
+    }
+
+    private void upload(String url, MultipartBody body, String filePath, String fileName, HttpEngineCallback httpEngineCallback){
+        mHttpEngine.upload(url, body, filePath, fileName, mTag, httpEngineCallback);
+    }
+
+    public void cancel(Object tag){
+        mHttpEngine.cancel(tag);
+    }
+
+    public void cancelAll(){
+        mHttpEngine.cancelAll();
     }
 
 
