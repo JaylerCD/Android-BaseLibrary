@@ -7,7 +7,7 @@ import java.util.Map;
 public class HttpManager {
 
     // 网络访问引擎
-    private HttpEngine mHttpEngine;
+    private static HttpEngine mHttpEngine;
 
     // 标识（作用:取消网络请求）
     private Object mTag;
@@ -32,6 +32,11 @@ public class HttpManager {
 
     // 文件名字
     private String mFileName;
+
+    // 可以在Application中配置HttpEngine
+    public static void initEngine(HttpEngine httpEngine){
+        mHttpEngine = httpEngine;
+    }
 
     // 切换引擎
     public HttpManager exchangeEngine(HttpEngine httpEngine){

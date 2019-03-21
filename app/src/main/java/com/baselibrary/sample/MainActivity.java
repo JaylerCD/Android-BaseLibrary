@@ -40,7 +40,7 @@ public class MainActivity extends FragmentActivity {
     @OnClick({R.id.tvText})
     private void onClick(View view) {
 
-        HttpManager.getInstance().exchangeEngine(new OkHttpEngine()).get().url("http://www.biubiushop.com/bbg/py/version/bjf_get_version")
+        HttpManager.getInstance().get().url("http://www.biubiushop.com/bbg/py/version/bjf_get_version")
                 .addParam("platform", 0).addParam("version", "1.2.0").tag(this).execute(new HttpEngineCallback() {
             @Override
             public void onFailure(Throwable e) {
@@ -53,38 +53,37 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
-
-        HttpManager.getInstance().exchangeEngine(new OkHttpEngine()).upload("..", "..").execute(new DownloadCallback() {
-            @Override
-            public void onFailure(Throwable e) {
-
-            }
-
-            @Override
-            public void onSuccess(String response) {
-
-            }
-
-            @Override
-            public void onStarted() {
-
-            }
-
-            @Override
-            public void onLoading(int progress) {
-
-            }
-
-            @Override
-            public void onCancelled() {
-
-            }
-
-            @Override
-            public void onFinished() {
-
-            }
-        });
+//        HttpManager.getInstance().exchangeEngine(new OkHttpEngine()).upload("..", "..").execute(new DownloadCallback() {
+//            @Override
+//            public void onFailure(Throwable e) {
+//
+//            }
+//
+//            @Override
+//            public void onSuccess(String response) {
+//
+//            }
+//
+//            @Override
+//            public void onStarted() {
+//
+//            }
+//
+//            @Override
+//            public void onLoading(int progress) {
+//
+//            }
+//
+//            @Override
+//            public void onCancelled() {
+//
+//            }
+//
+//            @Override
+//            public void onFinished() {
+//
+//            }
+//        });
     }
 
     @Override
