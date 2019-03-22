@@ -6,13 +6,14 @@ import android.util.Log;
 
 /**
  * 捕获应用闪退信息
- * 继承此类，重写 handleUncaughtException() 处理闪退信息
+ * 继承此类，设置 setListener() 监听处理闪退信息
+ * eg: ExceptionCrashHandler.getInstance().init(this).setListener(new AppHandleUncaughtExceptionListener());
  * Created by JayLer on 2019/3/22.
  */
 public class ExceptionCrashHandler implements Thread.UncaughtExceptionHandler{
 
     // 单例设计模式(双重校验锁)，volatile 与主线程变量同步
-    private volatile static ExceptionCrashHandler mInstance;
+    private static volatile  ExceptionCrashHandler mInstance;
 
     // 留下原来的，便于开发的时候调试
     private Thread.UncaughtExceptionHandler mDefaultHandler;
