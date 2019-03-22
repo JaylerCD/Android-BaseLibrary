@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.PermissionChecker;
 
@@ -71,7 +72,7 @@ public class PermissionUtils {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             String[] requestPermissions = deniedPermissions.toArray(new String[deniedPermissions.size()]);
-            ((Activity) mContext).requestPermissions(requestPermissions, mRequestCode);
+            ActivityCompat.requestPermissions((Activity) mContext,requestPermissions, mRequestCode);
         }
 
     }
