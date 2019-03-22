@@ -191,16 +191,9 @@ public class ViewInjectorImpl implements ViewInjector {
             try {
                 mResolvedMethod.invoke(mObject, v);
             } catch (IllegalAccessException e) {
-                /**
-                 *  throw new RuntimeException(
-                 *                         "Could not execute non-public method for android:onClick", e);
-                 */
-
+                throw new RuntimeException("Could not execute non-public method for android:onClick", e);
             } catch (InvocationTargetException e) {
-                /**
-                 *  throw new RuntimeException(
-                 *                          "Could not execute method for android:onClick", e);
-                 */
+                throw new RuntimeException("Could not execute method for android:onClick", e);
             }
         }
     }
