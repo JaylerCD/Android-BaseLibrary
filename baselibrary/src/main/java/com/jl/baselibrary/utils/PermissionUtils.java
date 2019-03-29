@@ -16,6 +16,8 @@ import java.util.List;
 /**
  * 权限检测工具类
  * 检查权限 --> 请求权限 --> 回调请求结果
+ * eg:PermissionUtils.with(this).permissions(...).code(.).request();
+ *    PermissionUtils.getInstance().onRequestPermissionsResult(requestCode, permissions, grantResults);
  * Created by JayLer on 2019/3/22.
  */
 public class PermissionUtils {
