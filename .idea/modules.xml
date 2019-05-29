@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AMap/AMap.iml" filepath="$PROJECT_DIR$/AMap/AMap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Android-BaseLibrary.iml" filepath="$PROJECT_DIR$/Android-BaseLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CommonUtils/CommonUtils.iml" filepath="$PROJECT_DIR$/CommonUtils/CommonUtils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RxHttpLibrary/RxHttpLibrary.iml" filepath="$PROJECT_DIR$/RxHttpLibrary/RxHttpLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TencentMap/TencentMap.iml" filepath="$PROJECT_DIR$/TencentMap/TencentMap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baselibrary/baselibrary.iml" filepath="$PROJECT_DIR$/baselibrary/baselibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zxing/zxing.iml" filepath="$PROJECT_DIR$/zxing/zxing.iml" />
+    </modules>
+  </component>
+</project>

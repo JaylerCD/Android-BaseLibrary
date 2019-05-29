@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\5892243eea3d65dac67bfb2e424ca159\\res\\drawable-v21\\notification_action_background.xml"
+    },
+    {
+        "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\drawable-v21\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\a3bc7ffae427fd4ea880d0d0b2de5cee\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\drawable-v21\\avd_show_password.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\a3bc7ffae427fd4ea880d0d0b2de5cee\\res\\drawable-v21\\avd_show_password.xml"
+    },
+    {
+        "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\drawable-v21\\avd_hide_password.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\a3bc7ffae427fd4ea880d0d0b2de5cee\\res\\drawable-v21\\avd_hide_password.xml"
+    },
+    {
+        "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\drawable-v21\\design_password_eye.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\a3bc7ffae427fd4ea880d0d0b2de5cee\\res\\drawable-v21\\design_password_eye.xml"
+    },
+    {
+        "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\drawable-v21\\abc_edit_text_material.xml"
+    }
+]

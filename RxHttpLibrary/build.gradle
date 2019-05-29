@@ -1,0 +1,61 @@
+if(isRunAlone.toBoolean()){
+    apply plugin: 'com.android.application'
+}else{
+    apply plugin: 'com.android.library'
+}
+
+android {
+    compileSdkVersion androidConfig["compileSdkVersion"]
+
+
+
+    defaultConfig {
+        minSdkVersion androidConfig["minSdkVersion"]
+        targetSdkVersion androidConfig["targetSdkVersion"]
+        versionCode androidConfig["versionCode"]
+        versionName androidConfig["versionName"]
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation anddroidDependenyList["com.android.support:appcompat-v7"]
+    testImplementation anddroidDependenyList["junit:junit"]
+    androidTestImplementation anddroidDependenyList["com.android.support.test:runner"]
+    androidTestImplementation anddroidDependenyList["com.android.support.test.espresso:espresso-core"]
+
+    api anddroidDependenyList["com.squareup.okhttp3:okhttp"]
+    api anddroidDependenyList["com.squareup.okhttp3:logging-interceptor"]
+    api anddroidDependenyList["com.squareup.okhttp3:okhttp-urlconnection"]
+
+    api anddroidDependenyList["com.squareup.retrofit2:retrofit"]
+    api anddroidDependenyList["com.squareup.retrofit2:converter-gson"]
+    api anddroidDependenyList["com.squareup.retrofit2:adapter-rxjava2"]
+    api anddroidDependenyList["com.jakewharton.retrofit:retrofit2-rxjava2-adapter"]
+
+    api anddroidDependenyList["io.reactivex.rxjava2:rxjava"]
+    api anddroidDependenyList["io.reactivex.rxjava2:rxandroid"]
+
+    api anddroidDependenyList["com.facebook.stetho:stetho"]
+    api anddroidDependenyList["com.facebook.stetho:stetho-okhttp3"]
+
+    api anddroidDependenyList["com.google.code.gson:gson"]
+
+}

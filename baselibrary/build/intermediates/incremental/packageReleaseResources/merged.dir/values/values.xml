@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="common_bg">#F4F4F9</color>
+    <color name="common_black">#000000</color>
+    <color name="common_font_four">#bcc5cc</color>
+    <color name="common_font_one">#284050</color>
+    <color name="common_font_three">#96a3ad</color>
+    <color name="common_font_two">#6e8392</color>
+    <color name="common_item_pressed">#ececec</color>
+    <color name="common_split_line">#e4e4e4</color>
+    <color name="common_status_bar_translucent_color">#32000000</color>
+    <color name="common_theme">@color/common_white</color>
+    <color name="common_theme_auxiliary">#4493f7</color>
+    <color name="common_theme_auxiliary_shallow">#E9F3FF</color>
+    <color name="common_theme_auxiliary_trigger">#297EEA</color>
+    <color name="common_theme_dark">#BCC5CC</color>
+    <color name="common_view_default">@color/common_theme_auxiliary</color>
+    <color name="common_view_enable_false">@color/common_theme_dark</color>
+    <color name="common_view_enable_true">@color/common_theme_auxiliary</color>
+    <color name="common_view_pressed">@color/common_theme_auxiliary_trigger</color>
+    <color name="common_view_stroke_slide_default">@color/common_theme_dark</color>
+    <color name="common_view_stroke_slide_enable_false">@color/common_theme_dark</color>
+    <color name="common_view_stroke_slide_enable_true">@color/common_theme_dark</color>
+    <color name="common_view_stroke_slide_press">@color/common_theme_auxiliary</color>
+    <color name="common_white">#ffffff</color>
+    <color name="dialog_list_item_bg_n">#f8f8f8</color>
+    <color name="dialog_list_item_bg_s">#f0f0f0</color>
+    <color name="text_light_grey">#444455</color>
+    <dimen name="common_button_store_width">1dp</dimen>
+    <dimen name="common_font_four">10sp</dimen>
+    <dimen name="common_font_one">16sp</dimen>
+    <dimen name="common_font_three">12sp</dimen>
+    <dimen name="common_font_toolbar_size">16sp</dimen>
+    <dimen name="common_font_two">14sp</dimen>
+    <dimen name="common_icon_action_width">20dp</dimen>
+    <dimen name="common_margin_left">16dp</dimen>
+    <dimen name="common_margin_right">16dp</dimen>
+    <dimen name="common_padding_left">16dp</dimen>
+    <dimen name="common_padding_right">16dp</dimen>
+    <dimen name="common_spit_line_height">1px</dimen>
+    <dimen name="common_status_loading_width_height">40dp</dimen>
+    <dimen name="common_toolbar_height">48dp</dimen>
+    <dimen name="common_toolbar_input_default_padding">15dp</dimen>
+    <dimen name="common_toolbar_input_double_padding">30dp</dimen>
+    <dimen name="common_toolbar_input_height">30dp</dimen>
+    <string name="app_name">BaseLibrary</string>
+    <style name="AnimBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+    <style name="AppDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="colorPrimary">@color/common_theme</item>
+        <item name="colorPrimaryDark">@color/common_black</item>
+        <item name="colorAccent">@color/common_theme_auxiliary</item>
+    </style>
+    <style name="BaseDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="BottomDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style mce_bogus="1" name="CustomDialogAnimationDefaultIn" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_default_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_default_out</item>
+    </style>
+    <style mce_bogus="1" name="DialogAnimationAlphaInTime200" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/alpha_0_to_1_time_200</item>
+        <item name="android:windowExitAnimation">@anim/alpha_1_to_0_time_200</item>
+    </style>
+    <style mce_bogus="1" name="DialogAnimationAlphaInTime400" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/alpha_0_to_1_time_400</item>
+        <item name="android:windowExitAnimation">@anim/alpha_1_to_0_time_400</item>
+    </style>
+    <style mce_bogus="1" name="DialogAnimationAlphaInTime600" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/alpha_0_to_1_time_600</item>
+        <item name="android:windowExitAnimation">@anim/alpha_1_to_0_time_600</item>
+    </style>
+    <style name="DialogAnimationBottomInTime200" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/translate_y_1_to_0_time_200</item>
+        <item name="android:windowExitAnimation">@anim/translate_y_0_to_1_time_200</item>
+    </style>
+    <style name="DialogAnimationBottomInTime400" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/translate_y_1_to_0_time_400</item>
+        <item name="android:windowExitAnimation">@anim/translate_y_0_to_1_time_400</item>
+    </style>
+    <style name="DialogAnimationBottomInTime600" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/translate_y_1_to_0_time_600</item>
+        <item name="android:windowExitAnimation">@anim/translate_y_0_to_1_time_600</item>
+    </style>
+    <style name="DialogAnimationLeftInTime200" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/translate_x_n1_to_0_time_200</item>
+        <item name="android:windowExitAnimation">@anim/translate_x_0_to_n1_time_200</item>
+    </style>
+    <style name="DialogAnimationLeftInTime400" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/translate_x_n1_to_0_time_400</item>
+        <item name="android:windowExitAnimation">@anim/translate_x_0_to_n1_time_400</item>
+    </style>
+    <style name="DialogAnimationLeftInTime600" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/translate_x_n1_to_0_time_600</item>
+        <item name="android:windowExitAnimation">@anim/translate_x_0_to_n1_time_600</item>
+    </style>
+    <style name="DialogAnimationRightInTime200" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/translate_x_1_to_0_time_200</item>
+        <item name="android:windowExitAnimation">@anim/translate_x_0_to_1_time_200</item>
+    </style>
+    <style name="DialogAnimationRightInTime400" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/translate_x_1_to_0_time_400</item>
+        <item name="android:windowExitAnimation">@anim/translate_x_0_to_1_time_400</item>
+    </style>
+    <style name="DialogAnimationRightInTime600" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/translate_x_1_to_0_time_600</item>
+        <item name="android:windowExitAnimation">@anim/translate_x_0_to_1_time_600</item>
+    </style>
+    <style name="DialogAnimationTopInTime200" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/translate_y_n1_to_0_time_200</item>
+        <item name="android:windowExitAnimation">@anim/translate_y_0_to_n1_time_200</item>
+    </style>
+    <style name="DialogAnimationTopInTime400" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/translate_y_n1_to_0_time_400</item>
+        <item name="android:windowExitAnimation">@anim/translate_y_0_to_n1_time_400</item>
+    </style>
+    <style name="DialogAnimationTopInTime600" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/translate_y_n1_to_0_time_600</item>
+        <item name="android:windowExitAnimation">@anim/translate_y_0_to_n1_time_600</item>
+    </style>
+    <declare-styleable name="CircleImageView">
+        <attr format="dimension" name="civ_border_width"/>
+        <attr format="color" name="civ_border_color"/>
+        <attr format="boolean" name="civ_border_overlay"/>
+        <attr format="color" name="civ_fill_color"/>
+    </declare-styleable>
+    <declare-styleable name="SlideDetailsLayout">
+        <!-- float value for indicate the moment of switch panel-->
+        <attr format="float" name="percent"/>
+        <!-- how long the animation keep-->
+        <attr format="integer" name="duration"/>
+        <!-- default panel to show after init-->
+        <attr format="enum" name="default_panel">
+            <enum name="front" value="0"/>
+            <enum name="behind" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>
