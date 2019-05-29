@@ -3,6 +3,7 @@ package com.baselibrary.sample;
 import android.app.Application;
 
 import com.baselibrary.sample.http.OkHttpEngine;
+import com.jl.baselibrary.handler.ExceptionCrashHandler;
 import com.jl.baselibrary.http.HttpManager;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
@@ -14,5 +15,6 @@ public class MyApplication extends Application {
         super.onCreate();
         Logger.addLogAdapter(new AndroidLogAdapter());
         HttpManager.initEngine(new OkHttpEngine());
+        ExceptionCrashHandler.getInstance().init(this).setListener(new AppHandleUncaughtExceptionListener());
     }
 }

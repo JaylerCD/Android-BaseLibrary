@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="common_status_bar_translucent_color">#32000000</color><!--状态栏半透明颜色-->
+    <color name="common_white">#ffffff</color>
+    <color name="common_black">#000000</color>
+
+    <color name="common_font_one">#284050</color> <!--字体一级颜色-->
+    <color name="common_font_two">#6e8392</color> <!--字体二级颜色-->
+    <color name="common_font_three">#96a3ad</color> <!--字体三级颜色-->
+    <color name="common_font_four">#bcc5cc</color> <!--字体四级颜色-->
+
+
+    <color name="common_item_pressed">#ececec</color>
+    <color name="common_split_line">#e4e4e4</color><!--分割线颜色-->
+    <color name="common_theme">@color/common_white</color> <!--APP主题颜色主颜色-->
+    <color name="common_theme_auxiliary">#4493f7</color> <!--APP主题颜色配色-->
+    <color name="common_theme_auxiliary_shallow">#E9F3FF</color><!--APP主题颜色主颜色淡化颜色-->
+    <color name="common_theme_auxiliary_trigger">#297EEA</color><!--APP主题颜色配色被触发颜色-->
+    <color name="common_theme_dark">#BCC5CC</color><!--APP主题颜色暗色-->
+
+
+    <color name="common_bg">#F4F4F9</color><!--背景颜色-->
+
+    <color name="common_view_default">@color/common_theme_auxiliary</color> <!--按钮默认状态颜色-->
+    <color name="common_view_pressed">@color/common_theme_auxiliary_trigger</color> <!--按钮点击状态颜色-->
+    <color name="common_view_enable_true">@color/common_theme_auxiliary</color> <!--按钮可点击状态颜色-->
+    <color name="common_view_enable_false">@color/common_theme_dark</color> <!--按钮不点击状态颜色-->
+
+
+    <color name="common_view_stroke_slide_default">@color/common_theme_dark</color> <!--按钮默认描边颜色-->
+    <color name="common_view_stroke_slide_press">@color/common_theme_auxiliary</color> <!--按钮点击后描边颜色-->
+    <color name="common_view_stroke_slide_enable_true">@color/common_theme_dark</color> <!--按钮可点击默认状态-->
+    <color name="common_view_stroke_slide_enable_false">@color/common_theme_dark</color> <!--按钮不可点击默认状态-->
+
+
+    <color name="text_light_grey">#444455</color>
+    <color name="dialog_list_item_bg_n">#f8f8f8</color>
+    <color name="dialog_list_item_bg_s">#f0f0f0</color>
+
+</resources>

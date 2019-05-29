@@ -1,0 +1,99 @@
+ext {
+
+    androidConfig = [
+            compileSdkVersion: 27,
+            buildToolsVersion: '27.0.3',
+            minSdkVersion    : 15,
+            targetSdkVersion : 27,
+            versionCode      : 1,
+            versionName      : '1.0.0'
+
+
+    ]
+    androidVersion = [
+            androidSupportVersion: '27.1.1',
+    ]
+
+
+    anddroidDependenyList = [
+            //为众多框架 API 提供兼容性包装器
+            "support-v4-compat"                                    : "com.android.support:support-compat:${androidVersion["androidSupportVersion"]}",
+            //提供大量实用程序类，例如 AsyncTaskLoader 和 PermissionChecker
+            "support-v4-core-utils"                                : "com.android.support:support-core-utils:${androidVersion["androidSupportVersion"]}",
+            //实现各种 UI 相关组件，例如 ViewPager、NestedScrollView 和 ExploreByTouchHelperandroid.support:exifinterface
+            "support-v4-core-ui"                                   : "com.android.support:support-core-ui:${androidVersion["androidSupportVersion"]}",
+            //向后移植部分媒体框架，包括 MediaBrowser 和 MediaSession
+            "support-v4-media-compat"                              : "com.android.support:support-media-compat:${androidVersion["androidSupportVersion"]}",
+            //添加对使用片段封装用户界面和功能的支持，从而使应用能够提供可以在大屏幕设备与小屏幕设备之间进行调节的布局。此模块依赖于 compat、core-utils、core-ui 和 media-compat。
+            "support-v4-fragment"                                  : "com.android.support:support-fragment:${androidVersion["androidSupportVersion"]}",
+            "com.android.support:recyclerview-v7"                  : "com.android.support:recyclerview-v7:${androidVersion["androidSupportVersion"]}",
+
+            "com.android.support:appcompat-v7"                     : "com.android.support:appcompat-v7:${androidVersion["androidSupportVersion"]}",
+            "com.android.support:design"                           : "com.android.support:design:${androidVersion["androidSupportVersion"]}",
+            "junit:junit"                                          : "junit:junit:4.12",
+
+            "com.android.support:multidex"                         : "com.android.support:multidex:1.0.3",
+            "org.greenrobot:eventbus"                              : "org.greenrobot:eventbus:3.0.0",
+            "com.android.support.constraint:constraint-layout"     : "com.android.support.constraint:constraint-layout:1.1.3",
+
+            //butterknife
+            "com.jakewharton:butterknife"                          : "com.jakewharton:butterknife:8.8.1",
+            "com.jakewharton:butterknife-compiler"                 : "com.jakewharton:butterknife-compiler:8.8.1",
+            "com.jakewharton:butterknife-annotations"              : "com.jakewharton:butterknife-annotations:8.8.1",
+
+            //okhttp3
+            "com.squareup.okhttp3:okhttp-urlconnection"            : "com.squareup.okhttp3:okhttp-urlconnection:3.11.0",
+            "com.squareup.okhttp3:okhttp"                          : "com.squareup.okhttp3:okhttp:3.11.0",
+            "com.squareup.okhttp3:logging-interceptor"             : "com.squareup.okhttp3:logging-interceptor:3.11.0",
+
+            //retrofit2
+            "com.squareup.retrofit2:retrofit"                      : "com.squareup.retrofit2:retrofit:2.4.0",
+            "com.squareup.retrofit2:converter-gson"                : "com.squareup.retrofit2:converter-gson:2.4.0",
+            "com.squareup.retrofit2:adapter-rxjava2"               : "com.squareup.retrofit2:adapter-rxjava2:2.4.0",
+            "com.jakewharton.retrofit:retrofit2-rxjava2-adapter"   : "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0",
+
+            //rx
+            "io.reactivex.rxjava2:rxjava"                          : "io.reactivex.rxjava2:rxjava:2.2.2",
+            "io.reactivex.rxjava2:rxandroid"                       : "io.reactivex.rxjava2:rxandroid:2.1.0",
+            "com.tbruyelle.rxpermissions2:rxpermissions"           : "com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar",
+
+            "com.trello.rxlifecycle2:rxlifecycle"                  : "com.trello.rxlifecycle2:rxlifecycle:2.2.2",
+            "com.trello.rxlifecycle2:rxlifecycle-android"          : "com.trello.rxlifecycle2:rxlifecycle-android:2.2.2",
+            "com.trello.rxlifecycle2:rxlifecycle-components"       : "com.trello.rxlifecycle2:rxlifecycle-components:2.2.2",
+            "com.trello.rxlifecycle2:rxlifecycle-android-lifecycle": "com.trello.rxlifecycle2:rxlifecycle-android-lifecycle:2.2.2",
+            "com.tbruyelle.rxpermissions2:rxpermissions"           : "com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar",
+
+            //JSON
+            'com.alibaba:fastjson'                                 : 'com.alibaba:fastjson:1.2.51',
+            "com.google.code.gson:gson"                            : "com.google.code.gson:gson:2.8.5",
+            //网络监听
+            "com.facebook.stetho:stetho"                           : "com.facebook.stetho:stetho:1.5.0",
+            "com.facebook.stetho:stetho-okhttp3"                   : "com.facebook.stetho:stetho-okhttp3:1.5.0",
+            //权限管理
+            "permissionsdispatcher"                                : "com.github.hotchemi:permissionsdispatcher:3.2.0",
+            "permissionsdispatcher-processor"                      : "com.github.hotchemi:permissionsdispatcher-processor:3.2.0",
+
+
+            "com.android.support.test:runner"                      : "com.android.support.test:runner:1.0.2",
+            "com.android.support.test.espresso:espresso-core"      : "com.android.support.test.espresso:espresso-core:3.0.2",
+
+            //glide
+            "com.github.bumptech.glide"                            : "com.github.bumptech.glide:glide:4.8.0",
+            "com.github.bumptech.glide:compiler"                   : "com.github.bumptech.glide:compiler:4.8.0",
+            "jp.wasabeef:glide-transformations"                    : "jp.wasabeef:glide-transformations:3.3.0",
+
+            "org.greenrobot:eventbus"                              : "org.greenrobot:eventbus:3.1.1",
+            "org.greenrobot:eventbus-annotation-processor"         : "org.greenrobot:eventbus-annotation-processor:3.1.1",
+
+            "com.neenbedankt.gradle.plugins:android-apt"           : "com.neenbedankt.gradle.plugins:android-apt:1.8",
+            //greendao
+            "org.greenrobot:greendao"                              : "org.greenrobot:greendao:3.2.2",
+            "org.greenrobot:greendao-gradle-plugin"                : "org.greenrobot:greendao-gradle-plugin:3.2.2",
+
+            //时间间距
+            "org.ocpsoft.prettytime:prettytime"                    : "org.ocpsoft.prettytime:prettytime:4.0.1.Final",
+
+            "com.google.zxing:core"                    : "com.google.zxing:core:3.4.0"
+    ]
+
+}

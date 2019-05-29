@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="common_font_one">16sp</dimen><!--一级字体大小-->
+    <dimen name="common_font_two">14sp</dimen><!--二级字体大小-->
+    <dimen name="common_font_three">12sp</dimen><!--二级字体大小-->
+    <dimen name="common_font_four">10sp</dimen><!--二级字体大小-->
+    <dimen name="common_font_toolbar_size">16sp</dimen><!--标题栏字体大小-->
+
+    <dimen name="common_icon_action_width">20dp</dimen><!--标题栏icon的大小-->
+
+
+    <dimen name="common_button_store_width">1dp</dimen><!--描边按钮的描边大小-->
+
+    <dimen name="common_toolbar_input_height">30dp</dimen>
+    <dimen name="common_toolbar_input_default_padding">15dp</dimen>
+    <dimen name="common_toolbar_input_double_padding">30dp</dimen>
+
+    <dimen name="common_status_loading_width_height">40dp</dimen>
+
+    <dimen name="common_padding_left">16dp</dimen><!--app左内边距-->
+
+    <dimen name="common_padding_right">16dp</dimen><!--app右内边距-->
+
+    <dimen name="common_margin_left">16dp</dimen><!--app左边距-->
+    <dimen name="common_margin_right">16dp</dimen><!--app右边距-->
+    <dimen name="common_spit_line_height">1px</dimen><!--分割线高度-->
+
+    <dimen name="common_toolbar_height">48dp</dimen><!--toolbar的高度-->
+
+
+</resources>
