@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    android:gravity="bottom"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:background="@color/common_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:paddingLeft="25dp"
+            android:textSize="16sp"
+            android:gravity="left|center"
+            android:paddingStart="25dp" android:text="取消"
+            android:id="@+id/tv_cancel"
+            android:textColor="#6e8392"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:paddingEnd="25dp" android:paddingRight="25dp"
+            android:textSize="16sp"
+            android:gravity="right|center"
+            android:text="确定"
+            android:id="@+id/tv_ok"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp" />
+    </LinearLayout>
+    <LinearLayout
+
+        android:background="@color/common_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <com.jl.baselibrary.widget.dialog.wheel.WheelView
+            android:id="@+id/wheel_year"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        </com.jl.baselibrary.widget.dialog.wheel.WheelView>
+        <com.jl.baselibrary.widget.dialog.wheel.WheelView
+            android:id="@+id/wheel_month"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        </com.jl.baselibrary.widget.dialog.wheel.WheelView>
+        <com.jl.baselibrary.widget.dialog.wheel.WheelView
+            android:id="@+id/wheel_day"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+        </com.jl.baselibrary.widget.dialog.wheel.WheelView>
+    </LinearLayout>
+
+</LinearLayout>

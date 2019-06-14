@@ -5,6 +5,7 @@
     <color name="common_status_bar_translucent_color">#32000000</color><!--状态栏半透明颜色-->
     <color name="common_white">#ffffff</color>
     <color name="common_black">#000000</color>
+    <color name="common_red">#FB4B4B</color>
 
     <color name="common_font_one">#284050</color> <!--字体一级颜色-->
     <color name="common_font_two">#6e8392</color> <!--字体二级颜色-->

@@ -12,14 +12,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.tencentmap.R;
 import com.rxokhttplibrary.base.BaseObserver;
 import com.tencent.tencentmap.mapsdk.maps.SupportMapFragment;
 import com.tencent.tencentmap.mapsdk.maps.TencentMap;
@@ -32,12 +30,10 @@ import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 import com.tencent.tencentmap.mapsdk.maps.model.Marker;
 import com.tencent.tencentmap.mapsdk.maps.model.MarkerOptions;
 import com.tencent.tencentmap.mapsdk.maps.model.TranslateAnimation;
+import com.tencentmap.entity.GeoCoderEntity;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -332,55 +328,46 @@ public class MapSearchLinearLayout extends LinearLayout implements TencentMap.On
      * 逆地址解析(坐标位置描述)
      */
     private void geoCoder(LatLng latLng) {
+        BaseObserver<GeoCoderEntity> observer = new BaseObserver<GeoCoderEntity>(context) {
 
-        if (latLng == null) {
-            return;
-        }
+            @Override
+            public void onSuccess(GeoCoderEntity result) {
 
-        MapHttpClient.getInstance()
-                .with(context)
-                .geoCoder("MKWBZ-IH53W-NGSRB-OTOS7-2SW52-AHBOI",String.format("%1$s,%2$s", latLng.latitude, latLng.longitude),
-                        1, String.format("page_size=20;page_index=%1$s", pageIndex))
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new BaseObserver<GeoCoderEntity>(context) {
+                List<GeoCoderEntity.ResultBean.PoisBean> pois = result.getResult().getPois();
+                if (pageIndex == 1) {
+                    mList.clear();
+                    poiCount = result.getResult().getPoi_count();
+                    recyclerView.smoothScrollToPosition(0);
+                    GeoCoderEntity.ResultBean.PoisBean bean = new GeoCoderEntity.ResultBean.PoisBean();
+                    bean.setTitle(result.getResult().getFormatted_addresses().getRecommend());
+                    bean.setLocation(result.getResult().getLocation());
+                    mList.add(bean);
 
-                    @Override
-                    public void onSuccess(GeoCoderEntity result) {
-
-                        List<GeoCoderEntity.ResultBean.PoisBean> pois = result.getResult().getPois();
-                        if (pageIndex == 1) {
-                            mList.clear();
-                            poiCount = result.getResult().getPoi_count();
-                            recyclerView.smoothScrollToPosition(0);
-                            GeoCoderEntity.ResultBean.PoisBean bean = new GeoCoderEntity.ResultBean.PoisBean();
-                            bean.setTitle(result.getResult().getFormatted_addresses().getRecommend());
-                            bean.setLocation(result.getResult().getLocation());
-                            mList.add(bean);
-
-                            if (isActivityResult) {
-                                isActivityResult = false;
-                            }else {
-                                setSelectedPoiTitle(bean.getTitle());
-                                setSelectedLatLng(new LatLng(bean.getLocation().getLat(), bean.getLocation().getLng()));
-                            }
-
-                        }
-                        mList.addAll(pois);
-                        if (mList.size() <= poiCount) {
-                            mHasNext = true;
-                            pageIndex ++;
-                        }else {
-                            mHasNext = false;
-                        }
-                        mAdapter.notifyDataSetChanged();
-
+                    if (isActivityResult) {
+                        isActivityResult = false;
+                    } else {
+                        setSelectedPoiTitle(bean.getTitle());
+                        setSelectedLatLng(new LatLng(bean.getLocation().getLat(), bean.getLocation().getLng()));
                     }
 
-                    @Override
-                    public void onFailed(Throwable e) {
-                    }
-                });
+                }
+                mList.addAll(pois);
+                if (mList.size() <= poiCount) {
+                    mHasNext = true;
+                    pageIndex++;
+                } else {
+                    mHasNext = false;
+                }
+                mAdapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onFail(Throwable e) {
+            }
+        };
+
+        MapManager.getInstance().geoCoder(context, latLng, pageIndex, observer);
     }
 
 
@@ -433,6 +420,10 @@ public class MapSearchLinearLayout extends LinearLayout implements TencentMap.On
             GeoCoderEntity.ResultBean.PoisBean bean = mList.get(selectedPosition);
             setSelectedLatLng(new LatLng(bean.getLocation().getLat(), bean.getLocation().getLng()));
             setSelectedPoiTitle(bean.getTitle());
+            if (selectedMarker != null) {
+                selectedMarker.remove();
+                selectedMarker = null;
+            }
             MapUtils.cameraUpdate(tencentMap, marker.getOptions().getPosition());
         }
     }

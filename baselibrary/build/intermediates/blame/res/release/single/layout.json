@@ -12,6 +12,10 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.1.1.aar\\4d674b376f8185ed862ef90cfb9d5d1e\\res\\layout\\notification_template_lines_media.xml"
     },
     {
+        "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\layout\\date_select_layout.xml",
+        "source": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\src\\main\\res\\layout\\date_select_layout.xml"
+    },
+    {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\layout\\design_text_input_password_icon.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\a3bc7ffae427fd4ea880d0d0b2de5cee\\res\\layout\\design_text_input_password_icon.xml"
     },
@@ -54,6 +58,10 @@
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_icon.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\layout\\abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\layout\\base_dialog.xml",
+        "source": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\src\\main\\res\\layout\\base_dialog.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\layout\\design_navigation_item_header.xml",
@@ -166,6 +174,10 @@
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\layout\\abc_activity_chooser_view.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\layout\\group_banner.xml",
+        "source": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\src\\main\\res\\layout\\group_banner.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\layout\\abc_search_dropdown_item_icons_2line.xml",

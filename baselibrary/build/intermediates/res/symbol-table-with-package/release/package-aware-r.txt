@@ -166,7 +166,9 @@ attr counterOverflowTextAppearance
 attr counterTextAppearance
 attr customNavigationLayout
 attr defaultQueryHint
+attr default_image
 attr default_panel
+attr delay_time
 attr dialogPreferredPadding
 attr dialogTheme
 attr displayOptions
@@ -228,9 +230,15 @@ attr iconTintMode
 attr iconifiedByDefault
 attr imageButtonStyle
 attr indeterminateProgressStyle
+attr indicator_drawable_selected
+attr indicator_drawable_unselected
+attr indicator_height
+attr indicator_margin
+attr indicator_width
 attr initialActivityCount
 attr insetForeground
 attr isLightTheme
+attr is_auto_play
 attr itemBackground
 attr itemIconTint
 attr itemPadding
@@ -456,6 +464,7 @@ color common_font_one
 color common_font_three
 color common_font_two
 color common_item_pressed
+color common_red
 color common_split_line
 color common_status_bar_translucent_color
 color common_theme
@@ -797,6 +806,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable dialog_list_item_bg
+drawable gray_radius
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -810,8 +820,10 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable shape_base_dialog
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable white_radius
 id action0
 id action_bar
 id action_bar_activity_content
@@ -836,6 +848,7 @@ id add
 id alertTitle
 id async
 id auto
+id bannerTitle
 id behind
 id blocking
 id bottom
@@ -867,10 +880,12 @@ id fixed
 id forever
 id front
 id ghost_view
+id glide_custom_view_target_tag
 id home
 id icon
 id icon_group
 id image
+id indicator
 id info
 id italic
 id item_touch_helper_previous_elevation
@@ -895,6 +910,7 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id numIndicator
 id panelContainer
 id panelItems
 id parallax
@@ -908,6 +924,7 @@ id radio
 id right
 id right_icon
 id right_side
+id rl
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -964,13 +981,24 @@ id transition_transform
 id tv
 id tvCancel
 id tvOk
+id tv_cancel
+id tv_left
+id tv_message
+id tv_ok
+id tv_right
+id tv_title
 id uniform
 id up
+id v_line
 id view_offset_helper
+id viewpager
 id visible
 id wheelFirst
 id wheelSecond
 id wheelThird
+id wheel_day
+id wheel_month
+id wheel_year
 id wrap_content
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
@@ -1009,7 +1037,9 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout base_dialog
 layout bottom_dialog
+layout date_select_layout
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1025,6 +1055,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout dialog_common_wheel
+layout group_banner
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -1496,6 +1527,7 @@ styleable AppCompatSeekBar android_thumb tickMark tickMarkTint tickMarkTintMode
 styleable AppCompatTextHelper android_drawableBottom android_drawableEnd android_drawableLeft android_drawableRight android_drawableStart android_drawableTop android_textAppearance
 styleable AppCompatTextView android_textAppearance autoSizeMaxTextSize autoSizeMinTextSize autoSizePresetSizes autoSizeStepGranularity autoSizeTextType fontFamily textAllCaps
 styleable AppCompatTheme actionBarDivider actionBarItemBackground actionBarPopupTheme actionBarSize actionBarSplitStyle actionBarStyle actionBarTabBarStyle actionBarTabStyle actionBarTabTextStyle actionBarTheme actionBarWidgetTheme actionButtonStyle actionDropDownStyle actionMenuTextAppearance actionMenuTextColor actionModeBackground actionModeCloseButtonStyle actionModeCloseDrawable actionModeCopyDrawable actionModeCutDrawable actionModeFindDrawable actionModePasteDrawable actionModePopupWindowStyle actionModeSelectAllDrawable actionModeShareDrawable actionModeSplitBackground actionModeStyle actionModeWebSearchDrawable actionOverflowButtonStyle actionOverflowMenuStyle activityChooserViewStyle alertDialogButtonGroupStyle alertDialogCenterButtons alertDialogStyle alertDialogTheme android_windowAnimationStyle android_windowIsFloating autoCompleteTextViewStyle borderlessButtonStyle buttonBarButtonStyle buttonBarNegativeButtonStyle buttonBarNeutralButtonStyle buttonBarPositiveButtonStyle buttonBarStyle buttonStyle buttonStyleSmall checkboxStyle checkedTextViewStyle colorAccent colorBackgroundFloating colorButtonNormal colorControlActivated colorControlHighlight colorControlNormal colorError colorPrimary colorPrimaryDark colorSwitchThumbNormal controlBackground dialogPreferredPadding dialogTheme dividerHorizontal dividerVertical dropDownListViewStyle dropdownListPreferredItemHeight editTextBackground editTextColor editTextStyle homeAsUpIndicator imageButtonStyle listChoiceBackgroundIndicator listDividerAlertDialog listMenuViewStyle listPopupWindowStyle listPreferredItemHeight listPreferredItemHeightLarge listPreferredItemHeightSmall listPreferredItemPaddingLeft listPreferredItemPaddingRight panelBackground panelMenuListTheme panelMenuListWidth popupMenuStyle popupWindowStyle radioButtonStyle ratingBarStyle ratingBarStyleIndicator ratingBarStyleSmall searchViewStyle seekBarStyle selectableItemBackground selectableItemBackgroundBorderless spinnerDropDownItemStyle spinnerStyle switchStyle textAppearanceLargePopupMenu textAppearanceListItem textAppearanceListItemSecondary textAppearanceListItemSmall textAppearancePopupMenuHeader textAppearanceSearchResultSubtitle textAppearanceSearchResultTitle textAppearanceSmallPopupMenu textColorAlertDialogListItem textColorSearchUrl toolbarNavigationButtonStyle toolbarStyle tooltipForegroundColor tooltipFrameBackground viewInflaterClass windowActionBar windowActionBarOverlay windowActionModeOverlay windowFixedHeightMajor windowFixedHeightMinor windowFixedWidthMajor windowFixedWidthMinor windowMinWidthMajor windowMinWidthMinor windowNoTitle
+styleable Banner default_image delay_time indicator_drawable_selected indicator_drawable_unselected indicator_height indicator_margin indicator_width is_auto_play
 styleable BottomNavigationView elevation itemBackground itemIconTint itemTextColor menu
 styleable BottomSheetBehavior_Layout behavior_hideable behavior_peekHeight behavior_skipCollapsed
 styleable ButtonBarLayout allowStacking

@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.tencent.tencentmap.mapsdk.maps.model.CameraPosition;
-import com.tencentmap.R;
 import com.jl.baselibrary.base.BaseActivity;
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
+import com.tencentmap.entity.GeoCoderEntity;
 
 public class MapSearchActivity extends BaseActivity implements MapSearchLinearLayout.OnViewListener{
 

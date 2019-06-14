@@ -19,9 +19,12 @@ import com.jl.baselibrary.ioc.annotation.ContentView;
 import com.jl.baselibrary.ioc.annotation.OnClick;
 import com.jl.baselibrary.ioc.annotation.ViewById;
 import com.jl.baselibrary.utils.PermissionUtils;
-import com.jl.sample.R;
+import com.baselibrary.sample.R;
 
 import java.security.Permission;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @ContentView(R.layout.activity_main)
@@ -86,4 +89,21 @@ public class MainActivity extends FragmentActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         PermissionUtils.getInstance().onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
+
+
+
+
+//
+//    private List<String>  change(int index, List list){
+//        ArrayList<Integer> mycopy=new ArrayList<Integer>(Arrays.asList(new Integer[list.size()]));
+//        Collections.copy(mycopy, list);
+//        for (int i = 0; i < index; i++) {
+//            if (i == index -1) {
+//                return
+//            }
+//            mycopy.remove(i);
+//        }
+//
+//
+//    }
 }

@@ -7,7 +7,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Matrix;
-import android.graphics.Point;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -20,9 +19,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.tencent.lbssearch.TencentSearch;
 import com.tencent.lbssearch.httpresponse.HttpResponseListener;
-import com.tencent.lbssearch.object.param.RoutePlanningParam;
 import com.tencent.lbssearch.object.result.WalkingResultObject;
 import com.tencent.tencentmap.mapsdk.maps.model.PolylineOptions;
 import com.jl.baselibrary.base.BaseActivity;
@@ -46,11 +43,9 @@ import com.tencent.tencentmap.mapsdk.maps.model.Marker;
 import com.tencent.tencentmap.mapsdk.maps.model.MarkerOptions;
 import com.tencent.tencentmap.mapsdk.maps.model.MyLocationStyle;
 import com.tencent.tencentmap.mapsdk.maps.model.ScaleAnimation;
+import com.tencentmap.entity.SearchEntity;
 
 import java.util.List;
-
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
 import static com.tencent.tencentmap.mapsdk.maps.model.MyLocationStyle.LOCATION_TYPE_MAP_ROTATE_NO_CENTER;
 
@@ -298,39 +293,38 @@ public class SupportMapFragmentActivity extends BaseActivity implements SensorEv
     @Override
     public void onCameraChangeFinished(CameraPosition cameraPosition) {
         inScreenCenterLatLng =  cameraPosition.target;
+        if (isFirstLocation) {
+            return;
+        }
         POISearch(inScreenCenterLatLng);
     }
 
     private void POISearch(LatLng latLng) {
-        MapHttpClient.getInstance()
-                .with(this)
-                .search("MKWBZ-IH53W-NGSRB-OTOS7-2SW52-AHBOI","厕所",String.format("nearby(%1$s,%2$s,%3$s)", latLng.latitude, latLng.longitude, 350))
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new BaseObserver<SearchEntity>(this) {
+        BaseObserver<SearchEntity> observer = new BaseObserver<SearchEntity>(this) {
+            @Override
+            public void onSuccess(SearchEntity result) {
+                List<SearchEntity.DataBean> data = result.getData();
 
-                    @Override
-                    public void onSuccess(SearchEntity result) {
-                        List<SearchEntity.DataBean> data = result.getData();
+                for (int k = 0; k < data.size(); k++) {
+                    SearchEntity.DataBean poi = data.get(k);
 
-                        for (int k = 0; k < data.size(); k++) {
-                            SearchEntity.DataBean poi = data.get(k);
+                    LatLng a = new LatLng(poi.getLocation().getLat(), poi.getLocation().getLng());
+                    BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory.fromBitmap(getMarkerLevelBitMap(R.drawable.icon_marker_level_1));
+                    MarkerOptions options = new MarkerOptions().position(a).icon(bitmapDescriptor);
+                    options.tag(poi);
+                    tencentMap.addMarker(options);
+                }
 
-                            LatLng a = new LatLng(poi.getLocation().getLat(), poi.getLocation().getLng());
-                            BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory.fromBitmap(getMarkerLevelBitMap(R.drawable.icon_marker_level_1));
-                            MarkerOptions options = new MarkerOptions().position(a).icon(bitmapDescriptor);
-                            options.tag(poi);
-                            tencentMap.addMarker(options);
-                        }
+            }
 
-                    }
-
-                    @Override
-                    public void onFailed(Throwable e) {
+            @Override
+            public void onFail(Throwable e) {
 
 
-                    }
-                });
+            }
+        };
+
+        MapManager.getInstance().POISearch(this, latLng, observer);
     }
 
     @Override
@@ -443,21 +437,8 @@ public class SupportMapFragmentActivity extends BaseActivity implements SensorEv
     }
 
     protected void getWalkPlan(LatLng toLatLng){
-        TencentSearch tencentSearch = new TencentSearch(this);
-        RoutePlanningParam param = new RoutePlanningParam() {
-            @Override
-            public String getUrl() {
-                return "https://apis.map.qq.com/ws/direction/v1/walking?key=MKWBZ-IH53W-NGSRB-OTOS7-2SW52-AHBOI";
-            }
-
-            @Override
-            public Class<?> getResultClass() {
-                return WalkingResultObject.class;
-            }
-        };
-        param.from(new LatLng(tencentLocation.getLatitude(), tencentLocation.getLongitude()));
-        param.to(toLatLng);
-        tencentSearch.getRoutePlan(param, this);
+        LatLng fromLatLng = new LatLng(tencentLocation.getLatitude(), tencentLocation.getLongitude());
+        MapManager.getInstance().getWalkPlan(this, fromLatLng, toLatLng, this);
     }
 
     @Override

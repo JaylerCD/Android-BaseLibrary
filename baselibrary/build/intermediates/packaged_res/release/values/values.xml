@@ -7,6 +7,7 @@
     <color name="common_font_three">#96a3ad</color>
     <color name="common_font_two">#6e8392</color>
     <color name="common_item_pressed">#ececec</color>
+    <color name="common_red">#FB4B4B</color>
     <color name="common_split_line">#e4e4e4</color>
     <color name="common_status_bar_translucent_color">#32000000</color>
     <color name="common_theme">@color/common_white</color>
@@ -137,6 +138,18 @@
         <item name="android:windowEnterAnimation">@anim/translate_y_n1_to_0_time_600</item>
         <item name="android:windowExitAnimation">@anim/translate_y_0_to_n1_time_600</item>
     </style>
+    <declare-styleable name="Banner">
+        <attr format="reference" name="default_image"/>
+        <attr format="dimension" name="delay_time"/>
+        <attr format="boolean" name="is_auto_play"/>
+        <attr format="dimension" name="indicator_width"/>
+        <attr format="dimension" name="indicator_height"/>
+        <attr format="dimension" name="indicator_margin"/>
+        <attr format="reference" name="indicator_drawable_selected"/>
+        <attr format="reference" name="indicator_drawable_unselected"/>
+        <!--<attr name="indicator_animator" format="reference" />-->
+        <!--<attr name="indicator_animator_reverse" format="reference" />-->
+    </declare-styleable>
     <declare-styleable name="CircleImageView">
         <attr format="dimension" name="civ_border_width"/>
         <attr format="color" name="civ_border_color"/>

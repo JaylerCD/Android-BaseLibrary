@@ -1,4 +1,5 @@
-if(isRunAlone.toBoolean()){
+apply from: "${rootProject.rootDir}/config.gradle"    //引用额外的配置
+if(moduleConfig.common){
     apply plugin: 'com.android.application'
 }else{
     apply plugin: 'com.android.library'

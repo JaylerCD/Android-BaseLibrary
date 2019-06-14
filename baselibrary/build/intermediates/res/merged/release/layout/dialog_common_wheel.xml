@@ -17,7 +17,7 @@
             android:layout_weight="1"
             android:gravity="left|center"
             android:paddingLeft="25dp"
-            android:text="取消"
+            android:paddingStart="25dp" android:text="取消"
             android:textColor="@color/common_font_two"
             android:textSize="@dimen/common_font_one" />
 
@@ -27,7 +27,7 @@
             android:layout_height="50dp"
             android:layout_weight="1"
             android:gravity="right|center"
-            android:paddingRight="25dp"
+            android:paddingEnd="25dp" android:paddingRight="25dp"
             android:text="确定"
             android:textColor="@color/common_font_one"
             android:textSize="@dimen/common_font_one" />

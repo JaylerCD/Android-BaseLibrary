@@ -3,6 +3,7 @@ package com.rxokhttplibrary.base.api;
 
 /**
  * Created by TIM on 2016/7/16.
+ * 该类仅供参考
  */
 public class BaseApiParams {
 

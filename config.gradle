@@ -7,11 +7,18 @@ ext {
             targetSdkVersion : 27,
             versionCode      : 1,
             versionName      : '1.0.0'
-
-
     ]
+
     androidVersion = [
             androidSupportVersion: '27.1.1',
+    ]
+
+    moduleConfig = [
+            rxHttp : false, //false：为module，true：为application
+            zxing  : false,
+            common : false,
+            base   : false,
+            tencentMap:false
     ]
 
 
@@ -26,8 +33,8 @@ ext {
             "support-v4-media-compat"                              : "com.android.support:support-media-compat:${androidVersion["androidSupportVersion"]}",
             //添加对使用片段封装用户界面和功能的支持，从而使应用能够提供可以在大屏幕设备与小屏幕设备之间进行调节的布局。此模块依赖于 compat、core-utils、core-ui 和 media-compat。
             "support-v4-fragment"                                  : "com.android.support:support-fragment:${androidVersion["androidSupportVersion"]}",
-            "com.android.support:recyclerview-v7"                  : "com.android.support:recyclerview-v7:${androidVersion["androidSupportVersion"]}",
 
+            "com.android.support:recyclerview-v7"                  : "com.android.support:recyclerview-v7:${androidVersion["androidSupportVersion"]}",
             "com.android.support:appcompat-v7"                     : "com.android.support:appcompat-v7:${androidVersion["androidSupportVersion"]}",
             "com.android.support:design"                           : "com.android.support:design:${androidVersion["androidSupportVersion"]}",
             "junit:junit"                                          : "junit:junit:4.12",
@@ -66,9 +73,11 @@ ext {
             //JSON
             'com.alibaba:fastjson'                                 : 'com.alibaba:fastjson:1.2.51',
             "com.google.code.gson:gson"                            : "com.google.code.gson:gson:2.8.5",
-            //网络监听
+
+            //Stetho是Facebook推出的一款使用Chrome来调试Android Application的工具  【网络监听 查看数据库】
             "com.facebook.stetho:stetho"                           : "com.facebook.stetho:stetho:1.5.0",
             "com.facebook.stetho:stetho-okhttp3"                   : "com.facebook.stetho:stetho-okhttp3:1.5.0",
+
             //权限管理
             "permissionsdispatcher"                                : "com.github.hotchemi:permissionsdispatcher:3.2.0",
             "permissionsdispatcher-processor"                      : "com.github.hotchemi:permissionsdispatcher-processor:3.2.0",
@@ -82,6 +91,7 @@ ext {
             "com.github.bumptech.glide:compiler"                   : "com.github.bumptech.glide:compiler:4.8.0",
             "jp.wasabeef:glide-transformations"                    : "jp.wasabeef:glide-transformations:3.3.0",
 
+            //eventbus
             "org.greenrobot:eventbus"                              : "org.greenrobot:eventbus:3.1.1",
             "org.greenrobot:eventbus-annotation-processor"         : "org.greenrobot:eventbus-annotation-processor:3.1.1",
 
@@ -93,7 +103,17 @@ ext {
             //时间间距
             "org.ocpsoft.prettytime:prettytime"                    : "org.ocpsoft.prettytime:prettytime:4.0.1.Final",
 
-            "com.google.zxing:core"                    : "com.google.zxing:core:3.4.0"
+            //zxing
+            "com.google.zxing:core"                                 : "com.google.zxing:core:3.4.0",
+
+            //multidex
+            "com.android.support:multidex"                          :"com.android.support:multidex:1.0.3",
+
+            //eventbus
+            "org.greenrobot:eventbus"                                : "org.greenrobot:eventbus:3.1.1",
+
+            //blurry 高斯模糊
+            "jp.wasabeef:blurry"                                     : "jp.wasabeef:blurry:2.1.1"
     ]
 
 }

@@ -1,4 +1,5 @@
-if(isRunAlone.toBoolean()){
+apply from: "${rootProject.rootDir}/config.gradle"    //引用额外的配置
+if(moduleConfig.base){
     apply plugin: 'com.android.application'
 }else{
     apply plugin: 'com.android.library'
@@ -24,10 +25,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
-    }
 
 }
 
@@ -39,5 +36,10 @@ dependencies {
     implementation anddroidDependenyList["com.android.support:appcompat-v7"]
     implementation anddroidDependenyList["com.android.support:recyclerview-v7"]
     implementation anddroidDependenyList["com.android.support:design"]
+    implementation anddroidDependenyList["com.github.bumptech.glide"]
+    annotationProcessor anddroidDependenyList["com.github.bumptech.glide:compiler"]
+    implementation anddroidDependenyList["jp.wasabeef:glide-transformations"]
+    implementation anddroidDependenyList["com.android.support:multidex"]
+    implementation anddroidDependenyList["org.greenrobot:eventbus"]
 
 }

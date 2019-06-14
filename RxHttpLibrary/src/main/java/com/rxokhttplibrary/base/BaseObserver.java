@@ -1,10 +1,6 @@
 package com.rxokhttplibrary.base;
 
 import android.content.Context;
-
-import com.rxokhttplibrary.error.BaseException;
-import com.rxokhttplibrary.error.HttpException;
-
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
@@ -33,30 +29,11 @@ public abstract class BaseObserver<T> implements Observer<T>, Disposable {
     @Override
     public void onNext(T value) {
         if (!isDisposed()) {
-            if (value instanceof BaseResponse) {
-                int code = ((BaseResponse) value).getCode();
-                String msg = ((BaseResponse) value).getMessage();
-                switch (code) {
-                    case BaseResponse.STATE_SUCCESS:
-                        try {
-                            onSuccess(value);
-                        } catch (Exception e) {
-                            terminated = true;
-                            onError(e);
-                        }
-                        break;
-                    default:
-                        terminated = true;
-                        onError(new HttpException(code, msg));
-                        break;
-                }
-            } else {
-                try {
-                    onSuccess(value);
-                } catch (Exception e) {
-                    terminated = true;
-                    onError(e);
-                }
+            try {
+                onSuccess(value);
+            } catch (Exception e) {
+                terminated = true;
+                onError(e);
             }
         }
     }
@@ -70,7 +47,7 @@ public abstract class BaseObserver<T> implements Observer<T>, Disposable {
 
     @Override
     public void onError(Throwable e) {
-        onFailed(e);
+        onFail(e);
         onFinal();
     }
 
@@ -86,16 +63,11 @@ public abstract class BaseObserver<T> implements Observer<T>, Disposable {
         return mDisposable == null || mDisposable.isDisposed();
     }
 
-    public abstract void onSuccess(T result) throws Exception;
+    public abstract void onSuccess(T result);
 
-    public abstract void onFailed(Throwable e);
+    public abstract void onFail(Throwable e);
 
     public void onFinal() {
     }
-
-    public boolean showToast(Throwable e) {
-        return false;
-    }
-
 
 }

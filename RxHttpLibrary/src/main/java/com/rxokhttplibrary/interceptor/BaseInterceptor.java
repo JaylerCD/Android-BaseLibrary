@@ -10,6 +10,7 @@ import okhttp3.Response;
 
 /**
  * Created by tim on 2019/4/2.
+ * 该类仅供参考
  */
 public class BaseInterceptor implements Interceptor {
     private Map<String, String> headers;

@@ -13,7 +13,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.biubiugo.convenient"
+        applicationId "com.jl.sample"
         minSdkVersion androidConfig["minSdkVersion"]
         targetSdkVersion androidConfig["targetSdkVersion"]
         versionCode androidConfig["versionCode"]
@@ -24,14 +24,25 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled false      //打开混淆，如果混淆出问题，可关闭
+            shrinkResources false    //资源压缩
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {       //指定打包名字格式
+            def date = new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+08"))
+            def fileName = "base" + "_V${defaultConfig.versionName}_${date}_" +
+                    variant.name + ".apk"
+            outputFileName = fileName
+        }
     }
 
 }
@@ -50,4 +61,6 @@ dependencies {
     implementation 'com.orhanobut:logger:2.2.0'
 
     implementation project(':baselibrary')
+
+    implementation project(':CommonUtils')
 }

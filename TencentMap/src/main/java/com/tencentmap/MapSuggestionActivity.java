@@ -4,31 +4,22 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.util.Log;
 import android.util.TypedValue;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.support.v7.widget.SearchView;
 import android.view.Window;
 import android.widget.TextView;
 
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
-import com.tencentmap.R;
 import com.jl.baselibrary.base.BaseActivity;
 import com.rxokhttplibrary.base.BaseObserver;
+import com.tencentmap.entity.SuggestionEntity;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
-
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by JayLer on 2019/5/20.
@@ -189,39 +180,37 @@ public class MapSuggestionActivity extends BaseActivity implements SearchView.On
             mAdapter.setLoadState(mAdapter.LOADING);
         }
         this.keyword = keyword;
-        MapHttpClient.getInstance()
-                .with(this)
-                .suggestion("MKWBZ-IH53W-NGSRB-OTOS7-2SW52-AHBOI", keyword, "广州", pageIndex, 20)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new BaseObserver<SuggestionEntity>(this) {
+        BaseObserver<SuggestionEntity> observer = new BaseObserver<SuggestionEntity>(this) {
 
-                    @Override
-                    public void onSuccess(SuggestionEntity result) {
+            @Override
+            public void onSuccess(SuggestionEntity result) {
 
 
-                        mAdapter.notifyDataSetChanged();
-                        if (pageIndex == 1) {
-                            mList.clear();
-                            poiCount = result.getCount();
-                            recyclerView.smoothScrollToPosition(0);
-                        }
-                        List<SuggestionEntity.DataBean> list = result.getData();
-                        mList.addAll(list);
-                        if (mList.size() < poiCount) {
-                            mHasNext = true;
-                            pageIndex++;
-                        } else {
-                            mHasNext = false;
-                            mAdapter.setLoadState(mAdapter.LOADING_COMPLETE);
-                        }
-                        mAdapter.notifyDataSetChanged();
-                    }
+                mAdapter.notifyDataSetChanged();
+                if (pageIndex == 1) {
+                    mList.clear();
+                    poiCount = result.getCount();
+                    recyclerView.smoothScrollToPosition(0);
+                }
+                List<SuggestionEntity.DataBean> list = result.getData();
+                mList.addAll(list);
+                if (mList.size() < poiCount) {
+                    mHasNext = true;
+                    pageIndex++;
+                } else {
+                    mHasNext = false;
+                    mAdapter.setLoadState(mAdapter.LOADING_COMPLETE);
+                }
+                mAdapter.notifyDataSetChanged();
+            }
 
-                    @Override
-                    public void onFailed(Throwable e) {
-                    }
-                });
+            @Override
+            public void onFail(Throwable e) {
+            }
+        };
+
+        MapManager.getInstance().suggestion(this, keyword, pageIndex, observer);
+
     }
 
     @Override

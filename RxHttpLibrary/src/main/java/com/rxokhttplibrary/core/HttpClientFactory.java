@@ -5,9 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.util.ArrayMap;
 import android.util.Log;
 
-import com.google.gson.Gson;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-import com.rxokhttplibrary.interceptor.StethoInterceptor;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -15,8 +13,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * @author Heycz
- * @date 2019/4/2
  * HttpClient工厂类
  */
 
@@ -30,7 +26,6 @@ public final class HttpClientFactory {
     public static final class Builder {
 
         private OkHttpClient.Builder mBuilder;
-        private Gson mGson;
         private String mUrl;
         private boolean mUseCache = true;
 
@@ -39,11 +34,6 @@ public final class HttpClientFactory {
 
         public Builder okHttpClientBuilder(OkHttpClient.Builder builder) {
             mBuilder = builder;
-            return this;
-        }
-
-        public Builder gson(Gson gson) {
-            mGson = gson;
             return this;
         }
 
@@ -58,7 +48,7 @@ public final class HttpClientFactory {
         }
 
         public <T> T build(Class<T> clazz) {
-            return create(mBuilder, mGson, mUrl, clazz, mUseCache);
+            return create(mBuilder, mUrl, clazz, mUseCache);
         }
 
         /**
@@ -71,28 +61,27 @@ public final class HttpClientFactory {
          * @return 接口实现对象
          */
         @NonNull
-        private <T> T create(@Nullable OkHttpClient.Builder builder, @Nullable Gson gson, @NonNull String url, @NonNull Class<T> clazz, boolean useCache) {
+        private <T> T create(@Nullable OkHttpClient.Builder builder, @NonNull String url, @NonNull Class<T> clazz, boolean useCache) {
             if (useCache) {
                 T client = createFromCache(url, clazz);
                 if (client != null) {
                     return client;
                 }
             }
-            gson = gson == null ? new Gson() : gson;
             if (!url.endsWith("/")) {
                 url += "/";
             }
-            //Chrome调试器
-            builder.addNetworkInterceptor(new StethoInterceptor());
             builder.addInterceptor(getHttpLoggingInterceptor());
             Retrofit retrofit = new Retrofit.Builder()
                     .client(builder.build())
                     .baseUrl(url)
-                    .addConverterFactory(GsonConverterFactory.create(gson))
+                    .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build();
 
-            retrofitArrayMap.put(url, retrofit);
+            if (useCache){
+                retrofitArrayMap.put(url, retrofit);
+            }
             return retrofit.create(clazz);
         }
 

@@ -1,5 +1,9 @@
 package com.tencentmap;
 
+import com.tencentmap.entity.GeoCoderEntity;
+import com.tencentmap.entity.SearchEntity;
+import com.tencentmap.entity.SuggestionEntity;
+
 import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
