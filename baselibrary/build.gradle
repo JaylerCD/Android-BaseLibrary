@@ -15,7 +15,7 @@ android {
         versionCode androidConfig["versionCode"]
         versionName androidConfig["versionName"]
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
@@ -36,10 +36,29 @@ dependencies {
     implementation anddroidDependenyList["com.android.support:appcompat-v7"]
     implementation anddroidDependenyList["com.android.support:recyclerview-v7"]
     implementation anddroidDependenyList["com.android.support:design"]
+
     implementation anddroidDependenyList["com.github.bumptech.glide"]
     annotationProcessor anddroidDependenyList["com.github.bumptech.glide:compiler"]
     implementation anddroidDependenyList["jp.wasabeef:glide-transformations"]
+
     implementation anddroidDependenyList["com.android.support:multidex"]
+
     implementation anddroidDependenyList["org.greenrobot:eventbus"]
 
+    api anddroidDependenyList["com.squareup.okhttp3:okhttp"]
+    api anddroidDependenyList["com.squareup.okhttp3:logging-interceptor"]
+    api anddroidDependenyList["com.squareup.okhttp3:okhttp-urlconnection"]
+
+    api anddroidDependenyList["com.squareup.retrofit2:retrofit"]
+    api anddroidDependenyList["com.squareup.retrofit2:converter-gson"]
+    api anddroidDependenyList["com.squareup.retrofit2:adapter-rxjava2"]
+    api anddroidDependenyList["com.jakewharton.retrofit:retrofit2-rxjava2-adapter"]
+
+    api anddroidDependenyList["io.reactivex.rxjava2:rxjava"]
+    api anddroidDependenyList["io.reactivex.rxjava2:rxandroid"]
+
+    api anddroidDependenyList["com.google.code.gson:gson"]
+
+        implementation anddroidDependenyList["me.relex:circleindicator"]
+        implementation anddroidDependenyList["com.github.chrisbanes:PhotoView"]
 }

@@ -26,7 +26,6 @@
     <color name="common_white">#ffffff</color>
     <color name="dialog_list_item_bg_n">#f8f8f8</color>
     <color name="dialog_list_item_bg_s">#f0f0f0</color>
-    <color name="text_light_grey">#444455</color>
     <dimen name="common_button_store_width">1dp</dimen>
     <dimen name="common_font_four">10sp</dimen>
     <dimen name="common_font_one">16sp</dimen>

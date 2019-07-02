@@ -2,12 +2,13 @@ package com.jl.baselibrary.widget.dialog.wheel;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 
 import com.jl.baselibrary.R;
+
+import androidx.annotation.NonNull;
 
 
 public abstract class WheelViewDialog extends Dialog {

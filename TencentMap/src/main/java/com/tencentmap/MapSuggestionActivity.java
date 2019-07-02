@@ -3,23 +3,24 @@ package com.tencentmap;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.TypedValue;
 import android.view.View;
-import android.support.v7.widget.SearchView;
 import android.view.Window;
 import android.widget.TextView;
 
+import com.jl.baselibrary.rxhttp.BaseObserver;
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 import com.jl.baselibrary.base.BaseActivity;
-import com.rxokhttplibrary.base.BaseObserver;
 import com.tencentmap.entity.SuggestionEntity;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by JayLer on 2019/5/20.
@@ -58,9 +59,9 @@ public class MapSuggestionActivity extends BaseActivity implements SearchView.On
         searchView.onActionViewExpanded();
         searchView.setIconifiedByDefault(false);
         searchView.setSubmitButtonEnabled(false);
-        TextView txt_search = searchView.findViewById(android.support.v7.appcompat.R.id.search_src_text);
+        TextView txt_search = searchView.findViewById(R.id.search_src_text);
         txt_search.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);//14sp
-        View view = searchView.findViewById(android.support.v7.appcompat.R.id.search_plate);
+        View view = searchView.findViewById(R.id.search_plate);
         view.setBackgroundColor(Color.TRANSPARENT);
     }
 

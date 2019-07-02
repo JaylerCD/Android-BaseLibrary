@@ -14,8 +14,9 @@ import android.media.MediaFormat;
 import android.media.MediaRecorder;
 import android.os.Build;
 import android.os.Process;
-import android.support.annotation.RequiresApi;
 import android.util.Log;
+
+import androidx.annotation.RequiresApi;
 
 /** 对ACC音频进行编码
  * Created by jiangdongguo on 2017/5/6.

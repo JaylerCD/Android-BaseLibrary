@@ -6,10 +6,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.Point;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
@@ -18,7 +14,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.rxokhttplibrary.base.BaseObserver;
+import com.jl.baselibrary.rxhttp.BaseObserver;
+import com.tencent.tencentmap.mapsdk.maps.MapView;
 import com.tencent.tencentmap.mapsdk.maps.SupportMapFragment;
 import com.tencent.tencentmap.mapsdk.maps.TencentMap;
 import com.tencent.tencentmap.mapsdk.maps.UiSettings;
@@ -35,6 +32,11 @@ import com.tencentmap.entity.GeoCoderEntity;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import static android.app.Activity.RESULT_OK;
 
 /**
@@ -43,7 +45,7 @@ import static android.app.Activity.RESULT_OK;
 public class MapSearchLinearLayout extends LinearLayout implements TencentMap.OnCameraChangeListener, View.OnClickListener{
 
     private RecyclerView recyclerView;
-    private android.support.v4.app.FragmentManager fm;
+    private FragmentManager fm;
     protected TencentMap tencentMap;
     private SupportMapFragment supportMapFragment;
     private Context context;
@@ -66,6 +68,7 @@ public class MapSearchLinearLayout extends LinearLayout implements TencentMap.On
     private ImageView ivLocation;
     private OnViewListener viewListener;
     private boolean isActivityResult;
+    private MapView mapview;
 
     public void setViewListener(OnViewListener viewListener) {
         this.viewListener = viewListener;
@@ -91,6 +94,10 @@ public class MapSearchLinearLayout extends LinearLayout implements TencentMap.On
 
     public void setSelectedPoiTitle(String title) {
         this.selectedPoiTitle = title;
+    }
+
+    public MapView getMapview() {
+        return mapview;
     }
 
     /**
@@ -272,10 +279,8 @@ public class MapSearchLinearLayout extends LinearLayout implements TencentMap.On
      * 创建Map地图对象，可以完成对地图的几乎所有操作
      */
     private void initMap() {
-        fm = ((FragmentActivity)context).getSupportFragmentManager();
-        supportMapFragment = (SupportMapFragment) fm.findFragmentById(R.id.map_frag);
-        tencentMap = supportMapFragment.getMap();
-
+        mapview = findViewById(R.id.mapview);
+        tencentMap = mapview.getMap();
         uiSettings = MapUtils.initUiSettings(tencentMap);
         tencentMap.setOnCameraChangeListener(this);
     }

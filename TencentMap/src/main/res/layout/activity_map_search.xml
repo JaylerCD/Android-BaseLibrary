@@ -14,11 +14,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <fragment
-                android:id="@+id/map_frag"
-                class="com.tencent.tencentmap.mapsdk.maps.SupportMapFragment"
+            <com.tencent.tencentmap.mapsdk.maps.MapView
+                android:id="@+id/mapview"
                 android:layout_width="match_parent"
-                android:layout_height="260dp" />
+                android:layout_height="260dp"/>
 
 
             <ImageView
@@ -33,13 +32,13 @@
 
 
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:overScrollMode="never">
 
-        </android.support.v7.widget.RecyclerView>
+        </androidx.recyclerview.widget.RecyclerView>
 
     </com.tencentmap.MapSearchLinearLayout>
 

@@ -10,8 +10,10 @@ import android.media.MediaFormat;
 import android.media.MediaMuxer;
 import android.os.Build;
 import android.os.Environment;
-import android.support.annotation.RequiresApi;
 import android.util.Log;
+
+import androidx.annotation.RequiresApi;
+
 /**MP4混合器
  * Created by jiangdongguo on 2017/5/6.
  */

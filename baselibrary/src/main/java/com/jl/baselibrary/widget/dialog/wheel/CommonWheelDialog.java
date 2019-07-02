@@ -2,7 +2,6 @@ package com.jl.baselibrary.widget.dialog.wheel;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
@@ -14,6 +13,8 @@ import com.jl.baselibrary.R;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import androidx.annotation.NonNull;
 
 /**
  * Created by JayLer on 2019/5/23.

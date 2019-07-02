@@ -1,6 +1,5 @@
 package com.commonutils;
 
-import android.support.annotation.NonNull;
 
 
 import com.commonutils.constant.TimeConstants;
@@ -11,6 +10,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+
+import androidx.annotation.NonNull;
 
 /**
  * <pre>

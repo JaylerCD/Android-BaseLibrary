@@ -5,11 +5,10 @@
     android:layout_height="match_parent">
 
 
-    <fragment
-        android:id="@+id/map_frag"
-        class="com.tencent.tencentmap.mapsdk.maps.SupportMapFragment"
+    <com.tencent.tencentmap.mapsdk.maps.MapView
+        android:id="@+id/mapview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
 
     <ImageView

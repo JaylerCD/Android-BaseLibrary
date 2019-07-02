@@ -1,7 +1,5 @@
 package com.commonutils;
 
-import android.support.v4.util.SimpleArrayMap;
-
 
 import com.commonutils.constant.RegexConstants;
 
@@ -10,6 +8,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import androidx.collection.SimpleArrayMap;
 
 /**
  * <pre>

@@ -1,11 +1,11 @@
 [
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0.aar\\ce856dedfc2512fc311d8b2fbd845517\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\abc_popup_exit.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\anim\\abc_popup_exit.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0.aar\\ce856dedfc2512fc311d8b2fbd845517\\res\\anim\\abc_popup_exit.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\alpha_0_to_1_time_200.xml",
@@ -13,7 +13,7 @@
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\a3bc7ffae427fd4ea880d0d0b2de5cee\\res\\anim\\design_bottom_sheet_slide_out.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\material-1.0.0.aar\\e2c46226398a27f493de825575082e17\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\translate_x_1_to_0_time_200.xml",
@@ -29,7 +29,7 @@
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0.aar\\ce856dedfc2512fc311d8b2fbd845517\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\translate_y_0_to_n1_time_600.xml",
@@ -41,7 +41,7 @@
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\a3bc7ffae427fd4ea880d0d0b2de5cee\\res\\anim\\design_bottom_sheet_slide_in.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\material-1.0.0.aar\\e2c46226398a27f493de825575082e17\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\translate_y_0_to_n1_time_200.xml",
@@ -53,7 +53,7 @@
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_out_bottom.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\anim\\abc_slide_out_bottom.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0.aar\\ce856dedfc2512fc311d8b2fbd845517\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\alpha_0_to_1_time_600.xml",
@@ -61,7 +61,7 @@
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\abc_fade_out.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\anim\\abc_fade_out.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0.aar\\ce856dedfc2512fc311d8b2fbd845517\\res\\anim\\abc_fade_out.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\push_bottom_out.xml",
@@ -89,7 +89,7 @@
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\abc_popup_enter.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\anim\\abc_popup_enter.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0.aar\\ce856dedfc2512fc311d8b2fbd845517\\res\\anim\\abc_popup_enter.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\dialog_default_in.xml",
@@ -97,7 +97,7 @@
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_in_bottom.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\anim\\abc_slide_in_bottom.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0.aar\\ce856dedfc2512fc311d8b2fbd845517\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\translate_x_0_to_1_time_400.xml",
@@ -121,7 +121,7 @@
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\abc_tooltip_enter.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\anim\\abc_tooltip_enter.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0.aar\\ce856dedfc2512fc311d8b2fbd845517\\res\\anim\\abc_tooltip_enter.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\alpha_1_to_0_time_600.xml",
@@ -133,7 +133,7 @@
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_in_top.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\anim\\abc_slide_in_top.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0.aar\\ce856dedfc2512fc311d8b2fbd845517\\res\\anim\\abc_slide_in_top.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\translate_y_0_to_1_time_600.xml",
@@ -149,15 +149,15 @@
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\design_snackbar_in.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\a3bc7ffae427fd4ea880d0d0b2de5cee\\res\\anim\\design_snackbar_in.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\material-1.0.0.aar\\e2c46226398a27f493de825575082e17\\res\\anim\\design_snackbar_in.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\abc_fade_in.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\anim\\abc_fade_in.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0.aar\\ce856dedfc2512fc311d8b2fbd845517\\res\\anim\\abc_fade_in.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\abc_slide_out_top.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\anim\\abc_slide_out_top.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0.aar\\ce856dedfc2512fc311d8b2fbd845517\\res\\anim\\abc_slide_out_top.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\push_bottom_in.xml",
@@ -181,11 +181,11 @@
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\design_snackbar_out.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\a3bc7ffae427fd4ea880d0d0b2de5cee\\res\\anim\\design_snackbar_out.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\material-1.0.0.aar\\e2c46226398a27f493de825575082e17\\res\\anim\\design_snackbar_out.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\abc_tooltip_exit.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\d10b9ff6117b7b6591053d8eda32a88a\\res\\anim\\abc_tooltip_exit.xml"
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0.aar\\ce856dedfc2512fc311d8b2fbd845517\\res\\anim\\abc_tooltip_exit.xml"
     },
     {
         "merged": "D:\\Project\\Android\\Android-BaseLibrary\\baselibrary\\build\\intermediates\\res\\merged\\release\\anim\\translate_x_n1_to_0_time_600.xml",

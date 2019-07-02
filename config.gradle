@@ -1,10 +1,10 @@
 ext {
 
     androidConfig = [
-            compileSdkVersion: 27,
-            buildToolsVersion: '27.0.3',
-            minSdkVersion    : 15,
-            targetSdkVersion : 27,
+            compileSdkVersion: 28,
+            buildToolsVersion: "28.0.0",
+            minSdkVersion    : 19,
+            targetSdkVersion : 28,
             versionCode      : 1,
             versionName      : '1.0.0'
     ]
@@ -104,16 +104,28 @@ ext {
             "org.ocpsoft.prettytime:prettytime"                    : "org.ocpsoft.prettytime:prettytime:4.0.1.Final",
 
             //zxing
-            "com.google.zxing:core"                                 : "com.google.zxing:core:3.4.0",
+            "com.google.zxing:core"                                : "com.google.zxing:core:3.4.0",
 
             //multidex
-            "com.android.support:multidex"                          :"com.android.support:multidex:1.0.3",
-
-            //eventbus
-            "org.greenrobot:eventbus"                                : "org.greenrobot:eventbus:3.1.1",
+            "com.android.support:multidex"                         :"com.android.support:multidex:1.0.3",
 
             //blurry 高斯模糊
-            "jp.wasabeef:blurry"                                     : "jp.wasabeef:blurry:2.1.1"
+            "jp.wasabeef:blurry"                                   : "jp.wasabeef:blurry:2.1.1",
+
+            //smartrefresh
+            "com.scwang.smartrefresh:SmartRefreshLayout"           : "com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-21",
+            "com.scwang.smartrefresh:SmartRefreshHeader"           :"com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-21",
+
+            //chart
+            "com.github.PhilJay:MPAndroidChart"                    : "com.github.PhilJay:MPAndroidChart:v3.1.0",
+
+            //PhotoView
+            "com.github.chrisbanes:PhotoView"                      : "com.github.chrisbanes:PhotoView:2.3.0",
+
+            //指示器
+            "me.relex:circleindicator"                       : "me.relex:circleindicator:1.2.2",
+            //图片预览
+            "com.github.wanglu1209:PhotoViewer"                     : "com.github.wanglu1209:PhotoViewer:v0.50"
     ]
 
 }

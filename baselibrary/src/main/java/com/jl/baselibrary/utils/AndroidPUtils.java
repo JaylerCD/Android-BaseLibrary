@@ -1,5 +1,7 @@
 package com.jl.baselibrary.utils;
 
+import android.os.Build;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -16,6 +18,9 @@ public class AndroidPUtils {
      * 关闭 API 提醒框
      */
     public static void closeApiWarningDialog(){
+        if(Build.VERSION.SDK_INT<28){
+            return;
+        }
         try {
             Class aClass = Class.forName("android.content.pm.PackageParser$Package");
             Constructor declaredConstructor = aClass.getDeclaredConstructor(String.class);

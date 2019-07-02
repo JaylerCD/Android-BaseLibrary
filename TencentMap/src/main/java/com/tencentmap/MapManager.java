@@ -2,7 +2,7 @@ package com.tencentmap;
 
 import android.content.Context;
 
-import com.rxokhttplibrary.base.BaseObserver;
+import com.jl.baselibrary.rxhttp.BaseObserver;
 import com.tencent.lbssearch.TencentSearch;
 import com.tencent.lbssearch.httpresponse.HttpResponseListener;
 import com.tencent.lbssearch.object.param.RoutePlanningParam;

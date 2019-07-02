@@ -3,10 +3,10 @@ package com.jl.baselibrary.widget.dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.view.MotionEvent;
 
 import com.jl.baselibrary.R;
+
+import androidx.annotation.NonNull;
 
 
 /**
@@ -34,9 +34,4 @@ public abstract class CustomBaseDialog extends Dialog{
      */
     protected abstract int getContentLayoutId();
 
-    @Override
-    public boolean onTouchEvent(@NonNull MotionEvent event) {
-        dismiss();
-        return super.onTouchEvent(event);
-    }
 }

@@ -1,8 +1,9 @@
 package com.jl.baselibrary.widget.banner;
 
 import android.content.Context;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * Created by chenjiale on 16/9/8.

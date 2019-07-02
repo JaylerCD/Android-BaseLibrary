@@ -62,4 +62,28 @@ public class MapSearchActivity extends BaseActivity implements MapSearchLinearLa
     public void onItemClick(GeoCoderEntity.ResultBean.PoisBean bean) {
 
     }
+
+    @Override
+    protected void onDestroy() {
+        mapSearchLinearLayout.getMapview().onDestroy();
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onPause() {
+        mapSearchLinearLayout.getMapview().onPause();
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        mapSearchLinearLayout.getMapview().onResume();
+        super.onResume();
+    }
+
+    @Override
+    protected void onStop() {
+        mapSearchLinearLayout.getMapview().onStop();
+        super.onStop();
+    }
 }

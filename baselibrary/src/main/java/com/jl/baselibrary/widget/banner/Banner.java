@@ -3,8 +3,6 @@ package com.jl.baselibrary.widget.banner;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Handler;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
@@ -22,6 +20,9 @@ import com.jl.baselibrary.glide.GlideUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 public class Banner extends FrameLayout implements ViewPager.OnPageChangeListener {
 

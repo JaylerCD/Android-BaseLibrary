@@ -2,8 +2,9 @@ package com.tencentmap;
 
 import android.content.Context;
 
-import com.rxokhttplibrary.base.HttpClient;
-import com.rxokhttplibrary.core.HttpClientFactory;
+
+import com.jl.baselibrary.rxhttp.HttpClient;
+import com.jl.baselibrary.rxhttp.HttpClientFactory;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;

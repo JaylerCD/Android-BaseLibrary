@@ -36,7 +36,6 @@
     <color name="common_view_stroke_slide_enable_false">@color/common_theme_dark</color> <!--按钮不可点击默认状态-->
 
 
-    <color name="text_light_grey">#444455</color>
     <color name="dialog_list_item_bg_n">#f8f8f8</color>
     <color name="dialog_list_item_bg_s">#f0f0f0</color>
 

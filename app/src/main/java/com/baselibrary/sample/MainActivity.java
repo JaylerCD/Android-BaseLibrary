@@ -2,9 +2,6 @@ package com.baselibrary.sample;
 
 import android.Manifest;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -19,13 +16,12 @@ import com.jl.baselibrary.ioc.annotation.ContentView;
 import com.jl.baselibrary.ioc.annotation.OnClick;
 import com.jl.baselibrary.ioc.annotation.ViewById;
 import com.jl.baselibrary.utils.PermissionUtils;
-import com.baselibrary.sample.R;
 
-import java.security.Permission;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 @ContentView(R.layout.activity_main)
 public class MainActivity extends FragmentActivity {

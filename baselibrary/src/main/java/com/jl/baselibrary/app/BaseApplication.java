@@ -1,5 +1,6 @@
 package com.jl.baselibrary.app;
-import android.support.multidex.MultiDexApplication;
+
+import androidx.multidex.MultiDexApplication;
 
 /**
  * Created by JayLer on 2019/6/13.

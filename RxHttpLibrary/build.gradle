@@ -15,7 +15,7 @@ android {
         versionCode androidConfig["versionCode"]
         versionName androidConfig["versionName"]
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 

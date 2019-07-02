@@ -1,10 +1,11 @@
 package com.jl.baselibrary.base;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
 import com.jl.baselibrary.app.ActivityStackManager;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * Created by JayLer on 2019/5/13.

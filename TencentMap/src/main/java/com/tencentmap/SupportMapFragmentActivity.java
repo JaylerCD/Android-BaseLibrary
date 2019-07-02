@@ -13,18 +13,18 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.location.Location;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.jl.baselibrary.rxhttp.BaseObserver;
 import com.tencent.lbssearch.httpresponse.HttpResponseListener;
 import com.tencent.lbssearch.object.result.WalkingResultObject;
+import com.tencent.tencentmap.mapsdk.maps.MapView;
 import com.tencent.tencentmap.mapsdk.maps.model.PolylineOptions;
 import com.jl.baselibrary.base.BaseActivity;
 import com.jl.baselibrary.utils.PermissionUtils;
-import com.rxokhttplibrary.base.BaseObserver;
 import com.tencent.map.geolocation.TencentLocation;
 import com.tencent.map.geolocation.TencentLocationListener;
 import com.tencent.map.geolocation.TencentLocationManager;
@@ -47,6 +47,9 @@ import com.tencentmap.entity.SearchEntity;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
+
 import static com.tencent.tencentmap.mapsdk.maps.model.MyLocationStyle.LOCATION_TYPE_MAP_ROTATE_NO_CENTER;
 
 
@@ -57,7 +60,7 @@ public class SupportMapFragmentActivity extends BaseActivity implements SensorEv
         TencentLocationListener, TencentMap.OnCameraChangeListener, TencentMap.OnMarkerClickListener,
         TencentMap.OnMapClickListener, HttpResponseListener,View.OnClickListener {
 
-    private android.support.v4.app.FragmentManager fm;
+    private FragmentManager fm;
     protected TencentMap tencentMap;
     private SupportMapFragment supportMapFragment;
     private TencentLocationManager locationManager;
@@ -73,6 +76,7 @@ public class SupportMapFragmentActivity extends BaseActivity implements SensorEv
     private Marker previousClickedMarker;
     private TencentLocation tencentLocation;
     private Marker inScreenCenterMarker;
+    protected MapView mapview=null;
 
     private View mapOtherView;
     private ImageView ivLocation;
@@ -105,10 +109,8 @@ public class SupportMapFragmentActivity extends BaseActivity implements SensorEv
      * 创建Map地图对象，可以完成对地图的几乎所有操作
      */
     private void initMap() {
-
-        fm = getSupportFragmentManager();
-        supportMapFragment = (SupportMapFragment) fm.findFragmentById(R.id.map_frag);
-        tencentMap = supportMapFragment.getMap();
+        mapview=(MapView)findViewById(R.id.mapview);
+        tencentMap = mapview.getMap();
     }
 
     /**
@@ -198,18 +200,6 @@ public class SupportMapFragmentActivity extends BaseActivity implements SensorEv
         tencentMap.setOnCameraChangeListener(this);
         tencentMap.setOnMarkerClickListener(this);
         tencentMap.setOnMapClickListener(this);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        sensorManager.registerListener(this, orientationSensor, SensorManager.SENSOR_DELAY_NORMAL);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        sensorManager.unregisterListener(this);
     }
 
     @Override
@@ -486,5 +476,32 @@ public class SupportMapFragmentActivity extends BaseActivity implements SensorEv
     @Override
     public void onFailure(int i, String s, Throwable throwable) {
 
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        mapview.onDestroy();
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onPause() {
+        mapview.onPause();
+        sensorManager.unregisterListener(this);
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        mapview.onResume();
+        sensorManager.registerListener(this, orientationSensor, SensorManager.SENSOR_DELAY_NORMAL);
+        super.onResume();
+    }
+
+    @Override
+    protected void onStop() {
+        mapview.onStop();
+        super.onStop();
     }
 }
